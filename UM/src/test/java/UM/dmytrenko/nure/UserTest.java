@@ -43,17 +43,17 @@ public class UserTest extends TestCase {
 		user.setFirstName("Maria");
 		user.setLastName("Dmytrenko");
 		user.setEmail("Maria@gmail.com");
-		user.setPhone("+380123123145");
+		user.setPhone("+380123123123");
 		user.setContry("Ukraine");
 		user.setAdress("Kharkiv.X.X");
-		assertEquals("Maria, Dmytrenko Ukraine Kharkiv.X.X +380123123145, Maria@gmail.com", user.getFullInformation());
+		assertEquals("Maria, Dmytrenko Ukraine Kharkiv.X.X +380123123123, Maria@gmail.com", user.getFullInformation());
 	}
 	public void  testGetContact()
 	{
 		user.setFirstName("Maria");
 		user.setLastName("Dmytrenko");
-		user.setPhone("+380123123145");
+		user.setPhone("+380123123123");
 		user.setEmail("Maria@gmail.com");
-		assertEquals("Maria, Dmytrenko +380123123145, Maria@gmail.com", user.getContact());
+		assertEquals("Maria, Dmytrenko +380123123123, Maria@gmail.com", user.getContact());
 	}
 }
