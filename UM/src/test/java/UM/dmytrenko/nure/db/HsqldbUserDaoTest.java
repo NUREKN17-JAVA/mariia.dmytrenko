@@ -1,6 +1,18 @@
 package UM.dmytrenko.nure.db;
 
+import junit.framework.TestCase;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.Date;
+
+import org.junit.jupiter.api.Test;
+
+import UM.dmytrenko.nure.User;
+import UM.dmytrenko.nure.db.ConnectionFactory;
+import UM.dmytrenko.nure.db.ConnectionFactoryImpl;
+import UM.dmytrenko.nure.db.DatabaseException;
+import UM.dmytrenko.nure.db.HsqldbUserDao;
 
 import org.dbunit.DatabaseTestCase;
 import org.dbunit.database.DatabaseConnection;
@@ -8,13 +20,6 @@ import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.XmlDataSet;
 import org.hsqldb.lib.Collection;
-
-import UM.dmytrenko.nure.User;
-import UM.dmytrenko.nure.db.ConnectionFactory;
-import UM.dmytrenko.nure.db.ConnectionFactoryImpl;
-import UM.dmytrenko.nure.db.DatabaseException;
-import UM.dmytrenko.nure.db.HsqldbUserDao;
-import junit.framework.TestCase;
 
 public class HsqldbUserDaoTest extends DatabaseTestCase {
 	
@@ -25,7 +30,7 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
 	private static final long TEST_ID = 1001;
     private static final String FIRST_NAME = "Maria";
     private static final String LAST_NAME = "Dmytrenko";
-
+	private static final Long ID = 4L;
 	
 	@Override
 	protected void setUp() throws Exception {
@@ -122,7 +127,7 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
 	@Override
 	protected IDataSet getDataSet() throws Exception {
 		IDataSet dataSet = new XmlDataSet(getClass().getClassLoader()
-				.getResourceAsStream("usersDataSet.xml"));
+				.getResourceAsStream("userDataSet.xml"));
 		return dataSet;
 	}
 }

@@ -13,6 +13,23 @@ public class User {
 	private String Adress;
 	
 
+	public User(String firstName, String lastName, Date date) {
+		this.firstName = firstName;	
+		this.LastName = lastName;
+		this.DateOfBirth = date;
+		}
+
+	public User(Long id, String firstName, String lastName, Date date) {
+		this.id = id;
+		this.firstName = firstName;	
+		this.LastName = lastName;
+		this.DateOfBirth = date;
+	}
+
+	public User() {
+		
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -100,4 +117,28 @@ public class User {
 		return getFirstName()+ ", " + getLastName() + " " + getPhone() + ", " + getEmail();
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (this == obj){
+			return true;
+		}
+		if (this.getId() == null && ((User) obj).getId() == null) {
+			return true;
+		}
+		return this.getId().equals(((User) obj).getId());
+	}
+
+	@Override
+	public int hashCode() {
+		if (this.getId() == null) {
+			return 0;
+		}
+		return this.getId().hashCode();
+	}
+
+	
+	
 }
