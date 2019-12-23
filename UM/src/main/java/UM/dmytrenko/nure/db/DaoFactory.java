@@ -8,7 +8,7 @@ import javax.management.RuntimeErrorException;
 
 public abstract class DaoFactory {
 
-	protected static final String USER_DAO = "dao.UM.dmytrenko.nure.db.UserDao";
+	protected static final String USER_DAO = "dao.UM.malykhin.nure.db.UserDao";
 
 	private static final String DAO_FACTORY = "dao.factory";
 	

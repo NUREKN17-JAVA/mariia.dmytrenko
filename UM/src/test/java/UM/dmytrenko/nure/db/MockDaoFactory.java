@@ -9,8 +9,7 @@ public class MockDaoFactory extends DaoFactory {
 	
 	private Mock mockUserDao;
 	
-	public MockDaoFactory () {
-		
+	public MockDaoFactory() {
 		mockUserDao = new Mock(UserDao.class);
 	}
 	
@@ -18,8 +17,8 @@ public class MockDaoFactory extends DaoFactory {
 		return mockUserDao;
 	}
 	
+	@Override
 	public UserDao getUserDao() {
-		
 		return (UserDao) mockUserDao.proxy();
 	}
 

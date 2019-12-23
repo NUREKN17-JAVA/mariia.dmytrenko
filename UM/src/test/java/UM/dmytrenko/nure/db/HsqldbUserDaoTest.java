@@ -28,8 +28,8 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
 	
 	
 	private static final long TEST_ID = 1001;
-    private static final String FIRST_NAME = "Maria";
-    private static final String LAST_NAME = "Dmytrenko";
+    private static final String FIRST_NAME = "Sasha";
+    private static final String LAST_NAME = "Malykhin";
 	private static final Long ID = 4L;
 	
 	@Override
@@ -40,8 +40,8 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
 	public void testCreateUser() {
 		try {
 			User user = new User();
-			user.setFirstName("Maria");
-			user.setLastName("Dmytrenko");
+			user.setFirstName("Sasha");
+			user.setLastName("Malykhin");
 			user.setDateOfBirth(new Date());
 			assertNull(user.getId());
 			user = dao.create(user);
